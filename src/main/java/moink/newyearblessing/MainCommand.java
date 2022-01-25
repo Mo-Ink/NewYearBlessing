@@ -23,19 +23,19 @@ public class MainCommand implements CommandExecutor {
         }
         Player player = (Player) commandSender;
         if (strings.length == 0) {
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "——————————插件用法——————————");
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 许愿并获得奖励");
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的许愿");
-            if (commandSender.isOp())
-                commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "————————————————————————");
+            player.sendMessage(messageFront + ChatColor.AQUA + "————————————————插件用法————————————");
+            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 许愿并获得奖励");
+            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的许愿");
+            if (player.isOp())
+                player.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
+            player.sendMessage(messageFront + ChatColor.AQUA + "—————————————————————————————————————");
             return false;
         } else if (strings.length == 2) {
             String Message0 = strings[0];
             if (Message0.equals("add")) {
                 if (!Utils.isWithinTheTime()) {
                     String messageTime = plugin.getConfig().getString("message-notime");
-                    commandSender.sendMessage(messageFront + ChatColor.RED + messageTime);
+                    player.sendMessage(messageFront + ChatColor.RED + messageTime);
                     return false;
                 }
                 String Message1 = strings[1];
@@ -44,7 +44,7 @@ public class MainCommand implements CommandExecutor {
                 for (String command_ : alreadyPlayers) {
                     if (command_.equals(player.getName())) {
                         String messageAlready = plugin.getConfig().getString("message-already");
-                        commandSender.sendMessage(messageFront + ChatColor.RED + messageAlready);
+                        player.sendMessage(messageFront + ChatColor.RED + messageAlready);
                         return false;
                     }
                 }
@@ -54,45 +54,45 @@ public class MainCommand implements CommandExecutor {
                 plugin.getConfig().set("AlreadyPlayers", alreadyPlayers);
                 plugin.saveConfig();
                 String messageUp = plugin.getConfig().getString("message-upload");
-                commandSender.sendMessage(messageFront + ChatColor.GREEN + messageUp);
+                player.sendMessage(messageFront + ChatColor.GREEN + messageUp);
 
                 String reward = plugin.getConfig().getString("reward");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player_name%", player.getName()));
                 return false;
             } else {
                 String messageError = plugin.getConfig().getString("message-error");
-                commandSender.sendMessage(messageFront + ChatColor.RED + messageError);
+                player.sendMessage(messageFront + ChatColor.RED + messageError);
             }
         } else if (strings.length == 1) {
             String Message0 = strings[0];
             if (Message0.equals("list")) {
                 if (!Utils.isWithinTheTime()) {
                     String messageTime = plugin.getConfig().getString("message-notime");
-                    commandSender.sendMessage(messageFront + ChatColor.RED + messageTime);
+                    player.sendMessage(messageFront + ChatColor.RED + messageTime);
                     return false;
                 }
-                commandSender.sendMessage(messageFront + ChatColor.GREEN + "——————————祝福列表——————————");
+                player.sendMessage(messageFront + ChatColor.GREEN + "————————————————祝福列表————————————————————");
                 List<String> blessings = plugin.getConfig().getStringList("Blessings");
                 for (String command_ : blessings) {
-                    commandSender.sendMessage(messageFront + ChatColor.WHITE + command_);
+                    player.sendMessage(messageFront + ChatColor.WHITE + command_);
                 }
-                commandSender.sendMessage(messageFront + ChatColor.GREEN + "————————————————————————");
+                player.sendMessage(messageFront + ChatColor.GREEN + "—————————————————————————————————————————————");
             } else if (Message0.equals("reload")) {
-                if (commandSender.hasPermission("nyb.commands.reload")) {
+                if (player.hasPermission("nyb.commands.reload")) {
                     plugin.reloadConfig();
                     String messageReload = plugin.getConfig().getString("message-reload");
-                    commandSender.sendMessage(messageFront + ChatColor.GREEN + messageReload);
+                    player.sendMessage(messageFront + ChatColor.GREEN + messageReload);
                 } else {
                     String messageNo = plugin.getConfig().getString("message-no");
-                    commandSender.sendMessage(messageFront + ChatColor.RED + messageNo);
+                    player.sendMessage(messageFront + ChatColor.RED + messageNo);
                 }
             } else {
                 String messageError = plugin.getConfig().getString("message-error");
-                commandSender.sendMessage(messageFront + ChatColor.RED + messageError);
+                player.sendMessage(messageFront + ChatColor.RED + messageError);
             }
         } else {
             String messageError = plugin.getConfig().getString("message-error");
-            commandSender.sendMessage(messageFront + ChatColor.RED + messageError);
+            player.sendMessage(messageFront + ChatColor.RED + messageError);
         }
         return false;
     }
