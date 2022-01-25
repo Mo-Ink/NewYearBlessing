@@ -47,7 +47,7 @@ public class MainCommand implements CommandExecutor {
                         return false;
                     }
                 }
-                blessing.add(Message1 + " §7——" + player);
+                blessing.add(Message1 + " §7——" + player.getName());
                 blessing.add(player.getName());
                 plugin.getConfig().set("Blessing", blessing);
                 plugin.saveConfig();
@@ -55,8 +55,7 @@ public class MainCommand implements CommandExecutor {
                 commandSender.sendMessage(messageFront + ChatColor.GREEN + messageUp);
 
                 String reward = plugin.getConfig().getString("reward");
-                reward.replace("%player_name%", player.getName());
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player_name%", player.getName()));
                 return false;
             } else {
                 String messageError = plugin.getConfig().getString("message-error");
