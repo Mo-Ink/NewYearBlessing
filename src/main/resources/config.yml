@@ -6,7 +6,7 @@ message-already: '你已经祝福过了哟'
 message-no: '这种事情是不可以做的哦'
 message-notime: '现在还没到时候捏'
 message-console: '控制台哥哥不能这样啦QwQ'
-message-front: '【NewYearBlessing】'
+message-front: '【新年祝福】'
 
 start-year: 2022
 start-month: 1
@@ -16,4 +16,6 @@ end-month: 2
 end-day: 3
 reward: 'give %player_name% diamond'
 
-Blessing:
+Blessings:
+
+AlreadyPlayers:

@@ -29,8 +29,7 @@ public class MainCommand implements CommandExecutor {
             if (commandSender.isOp())
                 commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
             return false;
-        }
-        if (strings.length == 2) {
+        } else if (strings.length == 2) {
             String Message0 = strings[0];
             if (Message0.equals("add")) {
                 if (!Utils.isWithinTheTime()) {
@@ -39,17 +38,19 @@ public class MainCommand implements CommandExecutor {
                     return false;
                 }
                 String Message1 = strings[1];
-                List<String> blessing = plugin.getConfig().getStringList("Blessing");
-                for (String command_ : blessing) {
+                List<String> blessings = plugin.getConfig().getStringList("Blessings");
+                List<String> alreadyPlayers = plugin.getConfig().getStringList("AlreadyPlayers");
+                for (String command_ : alreadyPlayers) {
                     if (command_.equals(player.getName())) {
                         String messageAlready = plugin.getConfig().getString("message-already");
                         commandSender.sendMessage(messageFront + ChatColor.RED + messageAlready);
                         return false;
                     }
                 }
-                blessing.add(Message1 + " §7——" + player.getName());
-                blessing.add(player.getName());
-                plugin.getConfig().set("Blessing", blessing);
+                blessings.add(Message1 + " §7——" + player.getDisplayName());
+                alreadyPlayers.add(player.getName());
+                plugin.getConfig().set("Blessings", blessings);
+                plugin.getConfig().set("AlreadyPlayers", alreadyPlayers);
                 plugin.saveConfig();
                 String messageUp = plugin.getConfig().getString("message-upload");
                 commandSender.sendMessage(messageFront + ChatColor.GREEN + messageUp);
@@ -71,12 +72,9 @@ public class MainCommand implements CommandExecutor {
                 }
                 String messageList = plugin.getConfig().getString("message-list");
                 commandSender.sendMessage(messageFront + ChatColor.GREEN + messageList);
-                List<String> blessing = plugin.getConfig().getStringList("Blessing");
-                int i = 0;
-                for (String command_ : blessing) {
-                    i++;
-                    if (i == 1) commandSender.sendMessage(command_);
-                    if (i == 2) i = 0;
+                List<String> blessings = plugin.getConfig().getStringList("Blessings");
+                for (String command_ : blessings) {
+                    commandSender.sendMessage(messageFront + ChatColor.WHITE +command_);
                 }
             } else if (Message0.equals("reload")) {
                 if (commandSender.hasPermission("nyb.commands.reload")) {
