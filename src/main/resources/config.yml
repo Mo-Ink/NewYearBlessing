@@ -1,7 +1,6 @@
 message-reload: '插件重载成功'
 message-upload: '祝福成功，你获得了一个钻石！'
 message-error: '你这语法有问题啊kora'
-message-list: '祝福列表'
 message-already: '你已经祝福过了哟'
 message-no: '这种事情是不可以做的哦'
 message-notime: '现在还没到时候捏'

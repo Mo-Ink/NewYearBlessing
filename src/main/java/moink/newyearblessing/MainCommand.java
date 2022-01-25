@@ -23,11 +23,12 @@ public class MainCommand implements CommandExecutor {
         }
         Player player = (Player) commandSender;
         if (strings.length == 0) {
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "插件用法如下：");
+            commandSender.sendMessage(messageFront + ChatColor.AQUA + "——————————插件用法——————————");
             commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 许愿并获得奖励");
             commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的许愿");
             if (commandSender.isOp())
                 commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
+            commandSender.sendMessage(messageFront + ChatColor.AQUA + "————————————————————————");
             return false;
         } else if (strings.length == 2) {
             String Message0 = strings[0];
@@ -70,12 +71,12 @@ public class MainCommand implements CommandExecutor {
                     commandSender.sendMessage(messageFront + ChatColor.RED + messageTime);
                     return false;
                 }
-                String messageList = plugin.getConfig().getString("message-list");
-                commandSender.sendMessage(messageFront + ChatColor.GREEN + messageList);
+                commandSender.sendMessage(messageFront + ChatColor.GREEN + "——————————祝福列表——————————");
                 List<String> blessings = plugin.getConfig().getStringList("Blessings");
                 for (String command_ : blessings) {
                     commandSender.sendMessage(messageFront + ChatColor.WHITE + command_);
                 }
+                commandSender.sendMessage(messageFront + ChatColor.GREEN + "————————————————————————");
             } else if (Message0.equals("reload")) {
                 if (commandSender.hasPermission("nyb.commands.reload")) {
                     plugin.reloadConfig();
