@@ -74,7 +74,7 @@ public class MainCommand implements CommandExecutor {
                 commandSender.sendMessage(messageFront + ChatColor.GREEN + messageList);
                 List<String> blessings = plugin.getConfig().getStringList("Blessings");
                 for (String command_ : blessings) {
-                    commandSender.sendMessage(messageFront + ChatColor.WHITE +command_);
+                    commandSender.sendMessage(messageFront + ChatColor.WHITE + command_);
                 }
             } else if (Message0.equals("reload")) {
                 if (commandSender.hasPermission("nyb.commands.reload")) {
