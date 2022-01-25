@@ -1,4 +1,3 @@
-#本插件需要papi,请先在服务器内输入/papi ecloud download Server和/papi ecloud download Player
 message-reload: '插件重载成功'
 message-upload: '祝福成功，你获得了一个钻石！'
 message-error: '你这语法有问题啊kora'
@@ -8,7 +7,7 @@ message-no: '这种事情是不可以做的哦'
 message-notime: '现在还没到时候捏'
 message-console: '控制台哥哥不能这样啦QwQ'
 message-front: '【NewYearBlessing】'
-#以上是一些语言文件
+
 start-year: 2022
 start-month: 1
 start-day: 31
@@ -16,5 +15,5 @@ end-year: 2022
 end-month: 2
 end-day: 3
 reward: 'give %player_name% diamond'
-#玩家许愿成功后执行的指令，支持papi
+
 Blessing:
