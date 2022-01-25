@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -17,8 +18,13 @@ public class MainCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         Plugin plugin = NewYearBlessing.getProvidingPlugin(NewYearBlessing.class);
-        Player player = (Player) commandSender;
         String messageFront = plugin.getConfig().getString("message-front");
+        if (commandSender instanceof ConsoleCommandSender) {
+            String messageConsole = plugin.getConfig().getString("message-console");
+            commandSender.sendMessage(ChatColor.YELLOW + messageFront + ChatColor.BLUE + messageConsole);
+            return false;
+        }
+        Player player = (Player) commandSender;
         if (strings.length == 0) {
             String messageError = plugin.getConfig().getString("message-error");
             commandSender.sendMessage(ChatColor.YELLOW + messageFront + ChatColor.RED + messageError);

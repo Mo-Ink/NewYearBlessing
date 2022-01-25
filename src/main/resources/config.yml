@@ -4,8 +4,9 @@ message-upload: '祝福成功，你获得了一个钻石！'
 message-error: '你这语法有问题啊kora'
 message-list: '祝福列表'
 message-already: '你已经祝福过了哟'
-message-no: '这种事情是不可以做的啦'
+message-no: '这种事情是不可以做的哦'
 message-notime: '现在还没到时候捏'
+message-console: '控制台哥哥不能这样啦QwQ'
 message-front: '【NewYearBlessing】'
 #以上是一些语言文件
 start-year: 2022
