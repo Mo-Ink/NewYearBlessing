@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.util.List;
+import java.util.Random;
 
 public class MainCommand implements CommandExecutor {
 
@@ -24,8 +25,8 @@ public class MainCommand implements CommandExecutor {
         Player player = (Player) commandSender;
         if (strings.length == 0) {
             player.sendMessage(messageFront + ChatColor.AQUA + "————————————————插件用法————————————");
-            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 许愿并获得奖励");
-            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的许愿");
+            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 祈福并获得奖励");
+            player.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的祝福");
             if (player.hasPermission("nyb.commands.reload"))
                 player.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
             player.sendMessage(messageFront + ChatColor.AQUA + "—————————————————————————————————————");
@@ -53,11 +54,12 @@ public class MainCommand implements CommandExecutor {
                 plugin.getConfig().set("Blessings", blessings);
                 plugin.getConfig().set("AlreadyPlayers", alreadyPlayers);
                 plugin.saveConfig();
-                String messageUp = plugin.getConfig().getString("message-upload");
-                player.sendMessage(messageFront + ChatColor.GREEN + messageUp);
+                String messageSuccess = plugin.getConfig().getString("message-success");
+                player.sendMessage(messageFront + ChatColor.GREEN + messageSuccess);
 
-                String reward = plugin.getConfig().getString("reward");
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player_name%", player.getName()));
+                List<String> rewards = plugin.getConfig().getStringList("rewards");
+                int random = new Random().nextInt(rewards.size()); //随机选择
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), rewards.get(random).replace("%player_name%", player.getName()));
                 return false;
             } else {
                 String messageError = plugin.getConfig().getString("message-error");
