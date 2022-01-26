@@ -26,7 +26,7 @@ public class MainCommand implements CommandExecutor {
             player.sendMessage(messageFront + ChatColor.AQUA + "————————————————插件用法————————————");
             player.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 许愿并获得奖励");
             player.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的许愿");
-            if (player.isOp())
+            if (player.hasPermission("nyb.commands.reload"))
                 player.sendMessage(messageFront + ChatColor.AQUA + "/nyb reload - 重载插件");
             player.sendMessage(messageFront + ChatColor.AQUA + "—————————————————————————————————————");
             return false;
