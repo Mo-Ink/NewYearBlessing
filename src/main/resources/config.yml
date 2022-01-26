@@ -12,7 +12,7 @@ start-month: 1
 start-day: 31
 end-year: 2022
 end-month: 2
-end-day: 3
+end-day: 5
 
 rewards:
   - 'give %player_name% diamond'
