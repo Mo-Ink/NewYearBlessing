@@ -15,7 +15,14 @@ end-month: 2
 end-day: 5
 
 rewards:
-  - 'give %player_name% diamond'
+  - 'give %player_name% rose_bush{HideFlags:63,display:{Name:"\"§c§l火红的玫瑰\"",Lore:["\"希望你2022年能收获爱情（?\""]}}'
+  - 'give %player_name% diamond{HideFlags:63,display:{Name:"\"§b§l闪闪发亮的钻石\"",Lore:["\"希望你2022年财运爆棚\""]}} 16'
+  - 'give %player_name% minecraft:yellow_banner{HideFlags:63,display:{Name:"\"§e§l漂亮的旗帜\"",Lore:["\"场景：海上日出\"","\"希望它能治愈你的心\""]},BlockEntityTag:{Patterns:[{Color:0,Pattern:"mc"},{Color:3,Pattern:"bs"},{Color:1,Pattern:"gra"}]}}'
+  - 'give %player_name% minecraft:black_banner{HideFlags:63,display:{Name:"\"§1§l漂亮的旗帜\"",Lore:["\"场景：夜空\"","\"希望它能治愈你的心\""]},BlockEntityTag:{Patterns:[{Color:0,Pattern:"moj"},{Color:15,Pattern:"vhr"},{Color:11,Pattern:"gru"},{Color:15,Pattern:"bts"}]}}'
+  - 'give %player_name% minecraft:blue_banner{HideFlags:63,display:{Name:"\"§5§l漂亮的旗帜\"",Lore:["\"场景：海上朝霞\"","\"希望它能治愈你的心\""]},BlockEntityTag:{Patterns:[{Color:0,Pattern:"tt"},{Color:11,Pattern:"ld"},{Color:6,Pattern:"gru"},{Color:11,Pattern:"bs"}]}}'
+  - 'give %player_name% minecraft:pink_banner{HideFlags:63,display:{Name:"\"§d§l漂亮的旗帜\"",Lore:["\"送你一只kawaii小兔子\""]},BlockEntityTag:{Patterns:[{Color:0,Pattern:"flo"},{Color:0,Pattern:"cr"},{Color:6,Pattern:"bs"},{Color:6,Pattern:"bo"}]}}'
+  - 'give %player_name% firework_rocket{HideFlags:63,display:{Name:"\"§a§l绚丽的烟花\"",Lore:["\"给自己放朵烟花吧\""]},Fireworks:{Explosions:[{Type:4,Trail:1,Colors:[I;14188952,4312372,14602026,6719955],FadeColors:[I;11743532,3887386,2437522]}],Flight:3}} 64'
+  - 'give %player_name% vex_spawn_egg{HideFlags:63,display:{Name:"\"§f§l神秘的刷怪蛋\"",Lore:["\"§k我也不知道是啥\""]},EntityTag:{id:"minecraft:axolotl",CustomName:"\"可爱的美西螈\"",CustomNameVisible:1,Glowing:1,Variant:3,FromBucket:1}} 4'
 
 Blessings:
 

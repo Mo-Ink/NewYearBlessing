@@ -49,7 +49,7 @@ public class MainCommand implements CommandExecutor {
                         return false;
                     }
                 }
-                blessings.add(Message1 + " §7——" + player.getDisplayName());
+                blessings.add("§l" + Message1 + " §r§7——" + player.getDisplayName());
                 alreadyPlayers.add(player.getName());
                 plugin.getConfig().set("Blessings", blessings);
                 plugin.getConfig().set("AlreadyPlayers", alreadyPlayers);
