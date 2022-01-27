@@ -12,6 +12,6 @@ public final class NewYearBlessing extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        saveDefaultConfig();
+        saveConfig();
     }
 }
