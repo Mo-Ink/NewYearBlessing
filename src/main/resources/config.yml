@@ -1,11 +1,11 @@
-message-reload: '插件重载成功'
-message-success: '祝福成功，你获得了礼物！'
-message-error: '你这语法有问题啊kora'
-message-already: '你已经祝福过了哟'
-message-no: '这种事情是不可以做的哦'
-message-notime: '现在还没到时候捏'
-message-console: '控制台哥哥不能这样啦QwQ'
-message-front: '【新年祈福】'
+message-reload: 插件重载成功
+message-success: 祝福成功，你获得了礼物！
+message-error: 你这语法有问题啊kora
+message-already: 你已经祝福过了哟
+message-no: 这种事情是不可以做的哦
+message-notime: 现在还没到时候捏
+message-console: 控制台哥哥不能这样啦QwQ
+message-front: 【新年祈福】
 
 start-year: 2022
 start-month: 1
