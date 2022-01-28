@@ -42,7 +42,7 @@ public class MainCommand implements CommandExecutor {
         FileConfiguration config = plugin.getConfig();
         String messageFront = ChatColor.YELLOW + config.getString("message-front");
         if (strings.length == 0) {
-            commandSender.sendMessage(messageFront + ChatColor.AQUA + "————————————————插件用法————————————");
+            commandSender.sendMessage(messageFront + ChatColor.AQUA + "——————————————插件用法——————————————");
             commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb add <内容> - 祈福并获得奖励");
             commandSender.sendMessage(messageFront + ChatColor.AQUA + "/nyb list - 查看所有人的祝福");
             if (commandSender.hasPermission("nyb.commands.reload"))
